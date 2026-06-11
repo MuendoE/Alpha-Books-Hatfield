@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserve a book | Alpha Books Hatfield</title>
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Alpha <span>Books</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Books</a>
+      <a href="condition.html">Condition guide</a>
+      <a href="sell.html">Sell your books</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="form-page">
+    <div class="wrap">
+      <h1>Reserve, pay cash</h1>
+      <p class="lede">Cash on delivery means you pay when you collect the book or when I drop it off locally in Hatfield. Send the details below and I will confirm the book is still available, then arrange a time and place. Nothing is paid online.</p>
+
+      <!-- ===================================================================
+           FORMSPREE SETUP
+           Use a Formspree form (the same one as your delivery details is fine,
+           or a separate one). Replace YOUR_ORDER_FORM_ID below.
+           The book is filled in automatically from the link the buyer clicked.
+      ==================================================================== -->
+      <form class="card-form" action="https://formspree.io/f/YOUR_ORDER_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Cash on delivery reservation">
+        <input type="hidden" id="order-isbn" name="isbn" value="">
+
+        <div class="field">
+          <label for="order-book">Book you want</label>
+          <input id="order-book" name="book" type="text" required>
+          <p class="hint">Filled in from the book you clicked. You can edit it if needed.</p>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="phone">Phone or WhatsApp</label>
+            <input id="phone" name="phone" type="tel" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="_replyto" type="email" required autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="method">How would you like to get it?</label>
+          <select id="method" name="method" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="Collect in Hatfield">Collect in Hatfield</option>
+            <option value="Local Hatfield delivery">Local delivery in Hatfield</option>
+          </select>
+          <p class="hint">Posting elsewhere in South Africa? Use the courier option on the book instead, since cash on delivery is for local handover.</p>
+        </div>
+
+        <div class="field">
+          <label for="address">Delivery address or area</label>
+          <textarea id="address" name="address" placeholder="Where should I bring it? Leave blank if you are collecting."></textarea>
+        </div>
+
+        <button class="submit" type="submit">Send reservation</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Alpha Books &middot; Hatfield</span>
+    <span><a href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
