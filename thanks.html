@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14545c">
+<title>Thanks for your order | Alpha Books Hatfield</title>
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Alpha <span>Books</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Books</a>
+      <a href="condition.html">Condition guide</a>
+      <a href="sell.html">Sell your books</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="thanks form-page">
+    <div class="wrap">
+      <span class="check">Payment received</span>
+      <h1>Thanks. One last step.</h1>
+      <p class="lede">Your payment came through. Tell me where the book should go and I will be in touch to arrange collection or send it on its way.</p>
+
+      <!-- Captures the delivery address after payment, since the PayFast
+           checkout does not reliably collect a full postal address.
+           Submissions go to the Formspree endpoint set in the action below. -->
+      <form class="card-form" action="https://formspree.io/f/meewrdgg" method="POST">
+        <input type="hidden" name="_subject" value="Delivery details for a book order">
+
+        <div class="row2">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="_replyto" type="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="book">Which book did you buy?</label>
+          <input id="book" name="book" type="text" required placeholder="Title, and Hatfield or courier">
+        </div>
+
+        <div class="field">
+          <label for="address">Delivery address</label>
+          <textarea id="address" name="address" required placeholder="Street, suburb, city, postal code. For Hatfield collection, just say 'collecting'."></textarea>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone or WhatsApp</label>
+          <input id="phone" name="phone" type="tel" required autocomplete="tel">
+        </div>
+
+        <button class="submit" type="submit">Send delivery details</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Alpha Books &middot; Hatfield, Pretoria</span>
+    <span class="contact">
+      <a href="https://wa.me/27608837967" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+27782650716">078 265 0716</a>
+      <a href="mailto:gemuendo@outlook.com">gemuendo@outlook.com</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

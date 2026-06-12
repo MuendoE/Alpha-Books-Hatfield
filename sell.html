@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14545c">
+<title>Sell your books | Alpha Books Hatfield</title>
+<meta name="description" content="Send in books you want to clear. List them on consignment or sell them outright. Look them up by ISBN.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Alpha <span>Books</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Books</a>
+      <a href="condition.html">Condition guide</a>
+      <a href="sell.html" aria-current="page">Sell your books</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="form-page">
+    <div class="wrap">
+      <h1>Send in your books</h1>
+      <p class="lede">Clearing a shelf? Send me the details below. You can list books on consignment, where I sell them for you and pay your share once they sell, or sell them to me outright and take an offer up front. Either way you start with the same form.</p>
+
+      <ol class="steps">
+        <li>You send the details of what you would like to sell.</li>
+        <li>I reply about which books fit, with a consignment price or an outright offer.</li>
+        <li>Consignment pays your share when a book sells. An outright sale pays you up front.</li>
+      </ol>
+
+      <!-- Submissions go to the Formspree endpoint set in the action below.
+           Photos: the free Formspree plan does NOT accept file uploads, so this
+           form asks for a link or tells the sender to email photos. If you
+           upgrade Formspree later, you can add <input type="file" name="photos">. -->
+      <form class="card-form" action="https://formspree.io/f/meewrdgg" method="POST">
+        <input type="hidden" name="_subject" value="New books offered for sale">
+
+        <div class="row2">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="_replyto" type="email" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone or WhatsApp (optional)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+
+        <div class="field">
+          <label for="isbn-input">Find a book by ISBN (optional)</label>
+          <div class="isbn-lookup">
+            <input id="isbn-input" type="text" inputmode="numeric" autocomplete="off"
+                   placeholder="e.g. 9780262033848">
+            <button type="button" id="isbn-lookup-btn">Look up</button>
+          </div>
+          <p class="isbn-status" id="isbn-status"></p>
+          <div class="isbn-preview" id="isbn-preview" hidden></div>
+          <p class="hint">Type an ISBN and I will pull the title and author into the list below. Do it once per book.</p>
+        </div>
+
+        <div class="field">
+          <label for="books">The books</label>
+          <textarea id="books" name="books" required placeholder="One per line: title, author, condition. e.g.
+The Power of One by Bryce Courtenay, good, slight spine wear
+Long Walk to Freedom by Nelson Mandela, like new"></textarea>
+          <p class="hint">Looked-up books land here automatically. Add a word on condition for each.</p>
+        </div>
+
+        <div class="field">
+          <label for="method">How would you like to sell?</label>
+          <select id="method" name="method" required>
+            <option value="" disabled selected>Choose one</option>
+            <option value="Consignment">List on consignment, paid when it sells</option>
+            <option value="Outright">Sell to you outright, take an offer up front</option>
+            <option value="Not sure">Not sure, suggest what is best</option>
+          </select>
+          <p class="hint">Consignment usually earns you a bit more. An outright sale gets you paid now.</p>
+        </div>
+
+        <div class="row2">
+          <div class="field">
+            <label for="price">What you hope to get</label>
+            <input id="price" name="hoped_price" type="text" placeholder="e.g. R50 a book, or open to offers">
+          </div>
+          <div class="field">
+            <label for="location">Where you are</label>
+            <input id="location" name="location" type="text" placeholder="e.g. Hatfield, Pretoria">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="photos">Photo link (optional)</label>
+          <input id="photos" name="photos_link" type="url" placeholder="Google Photos / Drive link, or leave blank">
+          <p class="hint">No link handy? Just send photos by reply once I get back to you.</p>
+        </div>
+
+        <button class="submit" type="submit">Send for review</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Alpha Books &middot; Hatfield, Pretoria</span>
+    <span class="contact">
+      <a href="https://wa.me/27608837967" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+27782650716">078 265 0716</a>
+      <a href="mailto:gemuendo@outlook.com">gemuendo@outlook.com</a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
